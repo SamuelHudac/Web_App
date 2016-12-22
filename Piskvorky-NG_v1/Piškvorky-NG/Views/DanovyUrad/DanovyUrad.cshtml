@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Danovy urad";
+}
+
+<body ng-app="dlzniciApp" ng-controller="dlzniciController">
+    <h2>
+        Daňový úrad - Dlžníci
+    </h2>
+    <h6 style="text-align:left">Vyhľadávanie <input text-align:left;" type="text" ng-model="search.$" /></h6>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="color:black">Guid</th>
+                <th style="color:black">Ič Dph</th>
+                <th style="color:black">Meno</th>
+                <th style="color:black">Mesto</th>
+                <th style="color:black">Psč</th>
+                <th style="color:black">Adresa</th>
+                <th style="color:black">Rok porušenia</th>
+                <th style="color:black">Ičo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="du in result | orderBy:'Dlzna_Suma' | filter:search">
+                <td style="color:red">{{du.Id}}</td>
+                <td style="color:black">{{du.Ic_Dph}}</td>
+                <td style="color:black">{{du.Meno}}</td>
+                <td style="color:black">{{du.Mesto}}</td>
+                <td style="color:black">{{du.PSC}}</td>
+                <td style="color:black">{{du.Adresa}}</td>
+                <td style="color:black">{{du.Rok_Porusenia}}</td>
+                <td style="color:black">{{du.Ico}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

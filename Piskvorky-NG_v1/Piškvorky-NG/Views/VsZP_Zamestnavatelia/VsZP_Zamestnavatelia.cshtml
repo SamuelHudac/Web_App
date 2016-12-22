@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "VsYP_Zamestnavatelia";
+}
+
+<body ng-app="dlzniciApp" ng-controller="dlzniciController">
+    <h2>
+        Všeobecná zdravotná poisťovňa - Dlžníci (Zamestnávatelia)
+    </h2>
+    <h6 style="text-align:left">Vyhľadávanie <input text-align:left;" type="text" ng-model="search.$" /></h6>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="color:black">Guid</th>
+                <th style="color:black">Meno</th>
+                <th style="color:black">Psč</th>
+                <th style="color:black">Ulica</th>
+                <th style="color:black">Mesto</th>
+                <th style="color:black">Ičo</th>
+                <th style="color:black">Dlžná suma</th>
+                <th style="color:black">Typ platiteľa</th>
+                <th style="color:black">Nárok na starostlivosť</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="vszpZ in result | orderBy:'Dlzna_Suma' | filter:search">
+                <td style="color:red">{{vszpZ.GuidID}}</td>
+                <td style="color:black">{{vszpZ.Meno}}</td>
+                <td style="color:black">{{vszpZ.PSC}}</td>
+                <td style="color:black">{{vszpZ.Ulica}}</td>
+                <td style="color:black">{{vszpZ.Mesto}}</td>
+                <td style="color:black">{{vszpZ.ICO}}</td>
+                <td style="color:black">{{vszpZ.Dlzna_Suma}} €</td>
+                <td style="color:black">{{vszpZ.Typ_Platitela}}</td>
+                <td style="color:black">{{vszpZ.Narok_Na_Starostlivost}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

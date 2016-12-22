@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "UNION";
+}
+
+<body ng-app="dlzniciApp" ng-controller="dlzniciController">
+    <h2>
+        Zdravotná poisťovňa UNION - Dlžníci
+    </h2>
+    <h6 style="text-align:left">Vyhľadávanie <input text-align:left;" type="text" ng-model="search.$" /></h6>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="color:black">Guid</th>
+                <th style="color:black">Meno</th>
+                <th style="color:black">Mesto</th>
+                <th style="color:black">Ulica</th>
+                <th style="color:black">Psč</th>
+                <th style="color:black">Ičo</th>
+                <th style="color:black">Dlžná suma</th>
+                <th style="color:black">Typ starostlivosti</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="union in result | orderBy:'Dlzna_Suma' | filter:search">
+                <td style="color:red">{{union.GuidID}}</td>
+                <td style="color:black">{{union.Meno}}</td>
+                <td style="color:black">{{union.Mesto}}</td>
+                <td style="color:black">{{union.Ulica}}</td>
+                <td style="color:black">{{union.PSC}}</td>
+                <td style="color:black">{{union.ICO}}</td>
+                <td style="color:black">{{union.Dlzna_Suma}}</td>
+                <td style="color:black">{{union.Typ_Starostlivosti}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Socialna posistovna";
+}
+
+<body ng-app="dlzniciApp" ng-controller="dlzniciController">
+    <h2>
+        Sociálna poistovňa - Dlžníci
+    </h2>
+    <h6 style="text-align:left">Vyhľadávanie <input text-align:left;" type="text" ng-model="search.$" /></h6>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="color:black">Guid</th>
+                <th style="color:black">Meno</th>
+                <th style="color:black">Adresa</th>
+                <th style="color:black">Mesto</th>
+                <th style="color:black">Dlžná suma</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="soc in result | orderBy:'Dlzna_Suma' | filter:search">
+                <td style="color:red">{{soc.GuidID}}</td>
+                <td style="color:black">{{soc.MenoFirmy}}</td>
+                <td style="color:black">{{soc.Adresa}}</td>
+                <td style="color:black">{{soc.Mesto}}</td>
+                <td style="color:black">{{soc.Dlzna_Suma}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>

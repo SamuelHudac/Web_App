@@ -1,0 +1,81 @@
+﻿.btn-tictactoe {
+    background-image: url('Images/tic-tac-toe.png');
+    width: 200px;
+    height: 200px;
+    
+}
+
+.btn-snake {
+    background-image: url('Images/snake.png');
+    width: 200px;
+    height: 200px;
+}
+
+.btn-tetris {
+    background-image: url('Images/tetris.png');
+    width: 200px;
+    height: 200px;
+}
+
+.btn-kurz {
+    background-image: url('Images/kurzov-listok.jpg');
+    width: 200px;
+    height: 200px;
+}
+
+.btn-tv {
+    background-image: url('Images/tv-program.png');
+    width: 200px;
+    height: 200px;
+}
+
+.btn-gass {
+    background-image: url('Images/pohonne-hmoty.png');
+    width: 200px;
+    height: 200px;
+}
+
+.btn-dlznici {
+    background-image: url('Images/dlznici.jpg');
+    width: 200px;
+    height: 200px;
+}
+
+.btn-tel-zoznam {
+    background-image: url('Images/tel_zoznam.jpg');
+    width: 200px;
+    height: 200px;
+}
+
+.btn-kalendar {
+    background-image: url('Images/kalendar.jpg');
+    width: 200px;
+    height: 200px;
+}
+
+.btn-round-lg {
+    border-radius: 22.5px;
+}
+
+.btn-round {
+    border-radius: 17px;
+}
+
+.btn-round-sm {
+    border-radius: 8px;
+}
+
+.btn-round-xs {
+    border-radius: 11px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    overflow-y: scroll;
+    width: 100%;
+}

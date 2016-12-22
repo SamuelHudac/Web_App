@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "tic_tac_toe";
+}
+
+<body style="background: black">
+    <div align="right">
+        <button type="button" class="btn-white-outline" value="Refresh Page" onClick="window.location.reload()">Hrať znova</button>
+    </div>
+    <div class="game" ng-app="piskvorkyApp" ng-controller="piskvorkyController">
+        <div class="board">
+            <div class="square top left" ng-click="getclick(index = 0, indexPola = 1)">
+                <div ng-bind-html="topLeft"></div>
+            </div>
+            <div class="square top" ng-click="getclick(index = 1, indexPola = 2)">
+                <div ng-bind-html="top"></div>
+            </div>
+            <div class="square top right" ng-click="getclick(index = 2, indexPola = 3)">
+                <div ng-bind-html="topRight"></div>
+            </div>
+            <div class="square left" ng-click="getclick(index = 3, indexPola = 4)">
+                <div ng-bind-html="left"></div>
+            </div>
+            <div class="square" ng-click="getclick(index = 4, indexPola = 5)">
+                <div ng-bind-html="midle"></div>
+            </div>
+            <div class="square right" ng-click="getclick(index = 5, indexPola = 6)">
+                <div ng-bind-html="right"></div>
+            </div>
+            <div class="square bottom left" ng-click="getclick(index = 6, indexPola = 7)">
+                <div ng-bind-html="bottomLeft"></div>
+            </div>
+            <div class="square bottom" ng-click="getclick(index = 7, indexPola = 8)">
+                <div ng-bind-html="bottom"></div>
+            </div>
+            <div class="square bottom right" ng-click="getclick(index = 8, indexPola = 9)">
+                <div ng-bind-html="bottomRight"></div>
+            </div>
+        </div>
+        <br>
+        <div align="center">
+            <span id="zacina" style="color: white; padding-left: 2em"></span>
+            <span id="menoHraca" style="color: white; padding-left: 2em"></span>
+        </div>
+        <div align="center">
+            <div ng-bind-html="winner"></div>
+        </div>
+    </div>
+</body>

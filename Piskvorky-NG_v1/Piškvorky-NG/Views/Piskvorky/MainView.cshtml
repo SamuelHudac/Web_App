@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="sk">
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container pull-right">
+            <ul class="social-icons pull-right animated bounceInLeft">
+                <li><a href="https://www.facebook.com/hudacsamuel" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+                <li><a href="" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+                <li><a href="" class="social-icon"> <i class="fa fa-rss"></i></a></li>
+                <li><a href="" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+                <li><a href="https://www.linkedin.com/in/samuel-huda%C4%8D-006744127?trk=hp-identity-name" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
+                <li><a href="" class="social-icon"> <i class="fa fa-google-plus"></i></a></li>
+            </ul>
+        </div>
+        <div class="pull-left">
+            <form class="form-inline animated bounceInRight">
+                <input class="form-control" type="text" placeholder="Search">
+            </form>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="h1-responsive">
+                        <small class="text-muted" style="alignment: center">AngularJS-aplikácie</small>
+                    </h1>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12" align="center">
+                    <div>
+                        <button class="btn-tictactoe btn-round-lg animated bounceInLeft" data-toggle="modal" data-target="#smallModal"></button>
+                        <button class="btn-snake btn-round-lg animated bounceInLeft"></button>
+                        <button class="btn-tetris btn-round-lg animated bounceInUp"></button>
+                        <button class="btn btn-transparent btn-round-lg animated bounceInRight"></button>
+                        <button class="btn btn-transparent btn-round-lg animated bounceInRight"></button>
+                        <button class="btn btn-transparent btn-round-lg animated bounceInUp"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="h1-responsive">
+                        <small class="text-muted" style="alignment: center">.NET/C#-aplikácie</small>
+                    </h1>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12" align="center">
+                    <div>
+                        <button class="btn-kurz btn-round-lg animated bounceInLeft" data-toggle="modal" data-target="#smallModal_KL"></button>
+                        <button class="btn-tv btn-round-lg animated bounceInLeft"></button>
+                        <button class="btn-gass btn-round-lg animated bounceInUp"></button>
+                        <button class="btn-dlznici btn-round-lg animated bounceInRight" data-toggle="modal" data-target="#smallModal_D"></button>
+                        <button class="btn-tel-zoznam btn-round-lg animated bounceInRight"></button>
+                        <button class="btn-kalendar btn-round-lg animated bounceInUp"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row" ng-app="mainApp" ng-controller="mainController">
+                <h1 class="h1-responsive">
+                    <small class="text-muted" style="text-align: center">Predpoveď počasia pre: {{mesto}} {{krajina}}</small>
+                </h1>
+                <div class="col-sm-12">
+                    <p class="text-muted" style="text-align: center"><b><big>{{Svk_Actual_Den}}{{Datum_Actual}} <br> {{teplota_Actual}} <br> {{podnebie_Actual}} <br> {{teplota_Today}}</big></b></p>
+                    <div class="{{ikona_Actual}}"></div>
+                </div>
+                <div class="col-sm-2">
+                    <canvas id="icon" width="100" height="100"></canvas>
+                    <p class="text-muted" style="text-align: center">
+                        <b>{{Svk_Prvy_Den}}{{Datum_First}}</b> <br> {{podnebie_First}} <br> {{teplota_First}}
+                    </p>
+                </div>
+                <div class="col-sm-2">
+                    <canvas id="icon2" width="100" height="100"></canvas>
+                    <p class="text-muted" style="text-align: center">
+                        <b>{{Svk_Druhy_Den}}{{Datum_Second}}</b> <br> {{podnebie_Second}} <br> {{teplota_Second}}
+                    </p>
+                </div>
+                <div class="col-sm-2">
+                    <canvas id="icon3" width="100" height="100"></canvas>
+                    <p class="text-muted" style="text-align: center">
+                        <b>{{Svk_Treti_Den}}{{Datum_Third}}</b> <br> {{podnebie_Third}} <br> {{teplota_Third}}
+                    </p>
+                </div>
+                <div class="col-sm-2">
+                    <canvas id="icon4" width="100" height="100"></canvas>
+                    <p class="text-muted" style="text-align: center">
+                        <b>{{Svk_Stvrty_Den}}{{Datum_Fourth}}</b> <br> {{podnebie_Fourth}} <br> {{teplota_Fourth}}
+                    </p>
+                </div>
+                <div class="col-sm-2">
+                    <canvas id="icon5" width="100" height="100"></canvas>
+                    <p class="text-muted" style="text-align: center">
+                        <b>{{Svk_Piaty_Den}}{{Datum_Fifth}}</b> <br> {{podnebie_Fifth}} <br> {{teplota_Fifth}}
+                    </p>
+                </div>
+                <div class="col-sm-2">
+                    <canvas id="icon6" width="100" height="100"></canvas>
+                    <p class="text-muted" style="text-align: center">
+                        <b>{{Svk_Siesty_Den}}{{Datum_Sixth}}</b> <br> {{podnebie_Sixth}} <br> {{teplota_Sixth}}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="smallModal_KL" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Kurzový lístok</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            @*<label for="mena" style="color: black">
+                                    <big>Mena</big>
+                                    <input class="form-control" type="text" list="kurzy" id="mena" style="font-size : 14px; width : 200px">
+                                    <datalist id="kurzy">
+                                        <option>USD - Americký dolár</option>
+                                        <option>JPY - Japonský jen</option>
+                                        <option>BGN - Bulharský lev</option>
+                                        <option>CZK - Česká koruna</option>
+                                        <option>DKK - Dánska koruna</option>
+                                        <option>GBP - Libra šterlingov</option>
+                                        <option>HUF - Maďarský forint</option>
+                                        <option>PLN - Poľský zlotý</option>
+                                        <option>RON - Nový rumunský lei</option>
+                                        <option>SEK - Švédska koruna</option>
+                                        <option>CHF - Švajčiarsky frank</option>
+                                        <option>NOK - Nórska koruna</option>
+                                        <option>HRK - Chorvátska kuna</option>
+                                        <option>RUB - Ruský rubeľ</option>
+                                        <option>TRY - Turecká líra</option>
+                                        <option>AUD - Austrálsky dolár</option>
+                                        <option>BRL - Brazílsky real</option>
+                                        <option>CAD - Kanadský dolár</option>
+                                        <option>CNY - Čínsky jüan</option>
+                                        <option>HKD - Hongkongský dolár</option>
+                                        <option>IDR - Indonézska rupia</option>
+                                        <option>ILS - Izraelský šekel</option>
+                                        <option>INR - Indická rupia</option>
+                                        <option>KRW - Juhokórejský won </option>
+                                        <option>MXN - Mexické peso</option>
+                                        <option>MYR - Malajzijský ringgit</option>
+                                        <option>NZD - Novozélandský dolár</option>
+                                        <option>PHP - Filipínske peso</option>
+                                        <option>SGD - Singapurský dolár</option>
+                                        <option>THB - Thajský baht</option>
+                                        <option>ZAR - Juhoafrický rand</option>
+                                    </datalist>
+                                </label>*@
+                        </div>
+                    </div>
+                    <div class="modal-footer" align="center">
+                        <button type="button" class="btn btn-black-outline" data-dismiss="modal">Zavrieť</button>
+                        <button type="button" class="btn btn-black-outline" id="btnQueryString_KL">Zobraziť</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="smallModal_D" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+            <div class="modal-dialog modal-open">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Zoznam dlžníkov</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="zoz" style="color: black">
+                                <big>Zoznam</big>
+                                <input class="form-control" type="text" id="zoz" list="dlznici" style="font-size : 14px; width : 200px">
+                                <datalist id="dlznici">
+                                    <option>Daňový úrad</option>
+                                    <option>Sociálna poisťovňa</option>
+                                    <option>VšZP - samoplatitelia</option>
+                                    <option>VšZP - zamestnávatelia</option>
+                                    <option>ZP - union</option>
+                                </datalist>
+                            </label>
+                        </div>
+                        @*<div class="form-group" id="meno">
+                                <label for="meno" style="color: black">
+                                    <big>Meno firmy *</big>
+                                    <input class="form-control" type="text" id="meno" required>
+                                </label>
+                            </div>
+                            <div class="form-group" id="ico">
+                                <label for="ICO" style="color: black">
+                                    <big>IČO firmy *</big>
+                                    <input class="form-control" type="text" id="ico" required>
+                                </label>
+                            </div>
+                            <div class="form-group" id="ic_dph">
+                                <label for="IC_DPH" style="color: black">
+                                    <big>IČ_DPH firmy *</big>
+                                    <input class="form-control" type="text" id="ic_dph" required>
+                                </label>
+                                <p align="left" style="font-size: 10px;"><b>*</b> označuje voliteľné údaje</p>
+                            </div>*@
+                        <div class="modal-footer" align="center">
+                            <button type="button" class="btn btn-black-outline" data-dismiss="modal">Zavrieť</button>
+                            <button type="button" class="btn btn-black-outline" id="btnQueryString_D">Zobraziť</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="smallModal" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Tic-Tac-Toe</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="usr" style="color: black">
+                                <big>Meno hráča</big>
+                                <input class="form-control" type="text" id="usr" required>
+                            </label>
+                        </div>
+                        <label for="pole" style="color: black">
+                            <big>Veľkosť poľa</big>
+                            <div class="form-group" id="pole">
+                                <label class="radio-inline"><input type="radio" name="vpole">3x3</label>
+                                <label class="radio-inline"><input type="radio" name="vpole">4x4</label>
+                                <label class="radio-inline"><input type="radio" name="vpole">5x5</label>
+                            </div>
+                        </label>
+                        <div>
+                            <label for="obt" style="color: black">
+                                <big>Obtiažnosť</big>
+                                <div class="form-group" id="obt">
+                                    <label class="radio-inline"><input type="radio" name="obtiaznost">Začiatočník</label>
+                                    <label class="radio-inline"><input type="radio" name="obtiaznost">Pokročilý</label>
+                                </div>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="zacina" style="color: black">
+                                <big>Začína</big>
+                                <div class="form-group" id="zacina">
+                                    <label class="radio-inline"><input type="radio" value="pc" name="zacina">Počítač</label>
+                                    <label class="radio-inline"><input type="radio" value="usr" name="zacina">Používateľ</label>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer" align="center">
+                        <button type="button" class="btn btn-black-outline" data-dismiss="modal">Zavrieť</button>
+                        <button type="button" class="btn btn-black-outline" id="btnQueryString">Hrať</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+

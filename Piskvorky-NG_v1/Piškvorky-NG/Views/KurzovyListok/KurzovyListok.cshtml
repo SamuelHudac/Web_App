@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "KurzovyListok";
+}
+
+<body ng-app="kurzovyListokApp" ng-controller="kurzovyListokController">
+    <h2>
+        Kurzový lístok
+    </h2>
+    <h6 style="text-align:left">Vyhľadávanie <input text-align:left;" type="text" ng-model="search.$" /></h6>
+    <table class="table">
+        <thead>
+            <tr>
+                <th style="color:black">Guid</th>
+                <th style="color:black">Mena</th>
+                <th style="color:black">Kurz</th>
+                <th style="color:black">Dátum Aktualizácie</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="kurz in result | orderBy:'DatumAktualizacie' | filter:search">
+                <td style="color:red">{{kurz.GuidID}}</td>
+                <td style="color:black">{{kurz.Mena}}</td>
+                <td style="color:black">{{kurz.Kurz}}</td>
+                <td style="color:black">{{kurz.DatumAktualizacie}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
